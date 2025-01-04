@@ -202,29 +202,6 @@
         <p id="userPesel">brak</p>
         <p class="sub">Numer PESEL</p><br>
     </section>
-
-    <script>
-        // Funkcja do pobierania parametrów z URL
-        function getQueryParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return {
-                firstName: urlParams.get('firstName') || 'brak',
-                lastName: urlParams.get('lastName') || 'brak',
-                nationality: urlParams.get('nationality') || 'POLSKIE',
-                birthdate: urlParams.get('birthdate') || '26-02-2006',
-                pesel: urlParams.get('pesel') || 'brak'
-            };
-        }
-
-        // Pobieramy dane z URL i wstawiamy do HTML
-        const { firstName, lastName, nationality, birthdate, pesel } = getQueryParams();
-
-        document.getElementById("userName").textContent = firstName;
-        document.getElementById("userSurname").textContent = lastName;
-        document.getElementById("userNationality").textContent = nationality;
-        document.getElementById("userBirthdate").textContent = birthdate;
-        document.getElementById("userPesel").textContent = pesel;
-    </script>
 </main>
 <section id="bottom">
     <img src="https://ebywatelkonta.pl/zmianadanych-ogspirala/dowod_files/checkmark-1.svg" alt="checkmark">
@@ -248,46 +225,80 @@
 </section>
 
 <div id="rogo">
-    <div class="content">
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Nazwisko rodowe</p>
-            <p class="main" id="userRodowe"></p>
-        </section>
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Płeć</p>
-            <p class="main" id="userPlec"></p>
-        </section>
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Nazwisko rodowe ojca</p>
-            <p class="main" id="dadSurname"></p>
-        </section>
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Nazwisko rodowe matki</p>
-            <p class="main" id="momSurname"></p>
-        </section>
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Miejsce urodzenia</p>
-            <p class="main" id="userLocation"></p>
-        </section>
-        <p class="krecha"></p>
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Adres zameldowania na pobyt stały</p>
-            <p class="main" id="userAdres"></p><br><p class="main" id="userPostcode"></p>
-        </section>
-        <p class="krecha"></p>
-        <section class="dana">
-            <p class="info">Data zameldowania na pobyt stały</p>
-            <p class="main" id="userdata_zameldowania"></p>
-        </section>
+        <div class="content">
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Nazwisko rodowe</p>
+                <p class="main" id="userRodowe"></p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Płeć</p>
+                <p class="main" id="userPlec"></p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Nazwisko rodowe ojca</p>
+                <p class="main" id="dadSurname"></p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Nazwisko rodowe matki</p>
+                <p class="main" id="momSurname"></p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Miejsce urodzenia</p>
+                <p class="main" id="userLocation"></p>
+            </section>
+            <p class="krecha"></p>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Adres zameldowania na pobyt stały</p>
+                <p class="main" id="userAdres"></p><br><p class="main" id="userPostcode"></p>
+            </section>
+            <p class="krecha"></p>
+            <section class="dana">
+                <p class="info">Data zameldowania na pobyt stały</p>
+                <p class="main" id="userdata_zameldowania"></p>
+            </section>
+        </div>
     </div>
-</div>
 
+    <script>
+        // Funkcja do pobierania parametrów z URL
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                firstName: urlParams.get('firstName') || 'brak',
+                lastName: urlParams.get('lastName') || 'brak',
+                nationality: urlParams.get('nationality') || 'POLSKIE',
+                birthdate: urlParams.get('birthdate') || '26-02-2006',
+                pesel: urlParams.get('pesel') || 'brak',
+                rodowe: urlParams.get('rodowe') || 'brak',
+                gender: urlParams.get('gender') || 'brak',
+                dadSurname: urlParams.get('dadSurname') || 'brak',
+                momSurname: urlParams.get('momSurname') || 'brak',
+                location: urlParams.get('location') || 'brak',
+                address: urlParams.get('address') || 'brak',
+                postcode: urlParams.get('postcode') || 'brak',
+                registrationDate: urlParams.get('registrationDate') || 'brak'
+            };
+        }
+
+        // Pobieramy dane z URL i wstawiamy do HTML
+        const { firstName, lastName, nationality, birthdate, pesel, rodowe, gender, dadSurname, momSurname, location, address, postcode, registrationDate } = getQueryParams();
+
+        // Wstawianie danych do odpowiednich elementów
+        document.getElementById("userRodowe").textContent = rodowe;
+        document.getElementById("userPlec").textContent = gender;
+        document.getElementById("dadSurname").textContent = dadSurname;
+        document.getElementById("momSurname").textContent = momSurname;
+        document.getElementById("userLocation").textContent = location;
+        document.getElementById("userAdres").textContent = address;
+        document.getElementById("userPostcode").textContent = postcode;
+        document.getElementById("userdata_zameldowania").textContent = registrationDate;
+    </script>
   <a class="buto">
     <div>
         <p class="info">Ostatnia aktualizacja</p>
