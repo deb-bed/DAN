@@ -265,7 +265,7 @@
         </div>
     </div>
 
-    <script>
+   <script>
         // Funkcja do pobierania parametrów z URL
         function getQueryParams() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -290,19 +290,19 @@
         const { firstName, lastName, nationality, birthdate, pesel, rodowe, gender, dadSurname, momSurname, location, address, postcode, registrationDate } = getQueryParams();
 
         // Wstawianie danych do odpowiednich elementów
-        document.getElementById("userName").textContent = firstName || 'brak';
-        document.getElementById("userSurname").textContent = lastName || 'brak';
-        document.getElementById("userNationality").textContent = nationality || 'POLSKIE';
-        document.getElementById("userBirthdate").textContent = birthdate || '26-02-2006';
-        document.getElementById("userPesel").textContent = pesel || 'brak';
-        document.getElementById("userRodowe").textContent = rodowe || 'brak';
-        document.getElementById("userPlec").textContent = gender || 'brak';
-        document.getElementById("dadSurname").textContent = dadSurname || 'brak';
-        document.getElementById("momSurname").textContent = momSurname || 'brak';
-        document.getElementById("userLocation").textContent = location || 'brak';
-        document.getElementById("userAdres").textContent = address || 'brak';
-        document.getElementById("userPostcode").textContent = postcode || 'brak';
-        document.getElementById("userdata_zameldowania").textContent = registrationDate || 'brak';
+        document.getElementById("userName").textContent = firstName || '';
+        document.getElementById("userSurname").textContent = lastName || '';
+        document.getElementById("userNationality").textContent = nationality || '';
+        document.getElementById("userBirthdate").textContent = birthdate || '';
+        document.getElementById("userPesel").textContent = pesel || '';
+        document.getElementById("userRodowe").textContent = rodowe || '';
+        document.getElementById("userPlec").textContent = gender || '';
+        document.getElementById("dadSurname").textContent = dadSurname || '';
+        document.getElementById("momSurname").textContent = momSurname || '';
+        document.getElementById("userLocation").textContent = location || '';
+        document.getElementById("userAdres").textContent = address || '';
+        document.getElementById("userPostcode").textContent = postcode || '';
+        document.getElementById("userdata_zameldowania").textContent = registrationDate || '';
     </script>
   <a class="buto">
     <div>
