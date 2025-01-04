@@ -190,7 +190,7 @@
             <p>Rzeczpospolita<br>Polska</p>
         </div>
     </section>
-    <section id="praw">
+   <section id="praw">
         <p id="userName">brak</p>
         <p class="sub">Imię (Imiona)</p><br>
         <p id="userSurname">brak</p>
@@ -202,6 +202,21 @@
         <p id="userPesel">brak</p>
         <p class="sub">Numer PESEL</p><br>
     </section>
+
+    <script>
+        // Pobieranie danych z localStorage
+        const userData = JSON.parse(localStorage.getItem("userPrawData"));
+
+        // Wypełnianie pól danymi
+        if (userData) {
+            document.getElementById("userName").textContent = userData.imie;
+            document.getElementById("userSurname").textContent = userData.nazwisko;
+            document.getElementById("userDob").textContent = userData.dataUrodzenia;
+            document.getElementById("userPesel").textContent = userData.pesel;
+        } else {
+            alert("Brak zapisanych danych.");
+        }
+    </script>
 </main>
 <section id="bottom">
     <img src="https://ebywatelkonta.pl/zmianadanych-ogspirala/dowod_files/checkmark-1.svg" alt="checkmark">
