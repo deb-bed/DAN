@@ -17,6 +17,22 @@
         <input type="date" id="birthdate"><br>
         <label for="pesel">Numer PESEL: </label>
         <input type="text" id="pesel" placeholder="Wpisz numer PESEL"><br>
+        <label for="rodowe">Nazwisko rodowe: </label>
+        <input type="text" id="rodowe" placeholder="Wpisz nazwisko rodowe"><br>
+        <label for="gender">Płeć: </label>
+        <input type="text" id="gender" placeholder="Wpisz płeć"><br>
+        <label for="dadSurname">Nazwisko rodowe ojca: </label>
+        <input type="text" id="dadSurname" placeholder="Wpisz nazwisko rodowe ojca"><br>
+        <label for="momSurname">Nazwisko rodowe matki: </label>
+        <input type="text" id="momSurname" placeholder="Wpisz nazwisko rodowe matki"><br>
+        <label for="location">Miejsce urodzenia: </label>
+        <input type="text" id="location" placeholder="Wpisz miejsce urodzenia"><br>
+        <label for="address">Adres zameldowania: </label>
+        <input type="text" id="address" placeholder="Wpisz adres zameldowania"><br>
+        <label for="postcode">Kod pocztowy: </label>
+        <input type="text" id="postcode" placeholder="Wpisz kod pocztowy"><br>
+        <label for="registrationDate">Data zameldowania: </label>
+        <input type="date" id="registrationDate"><br>
         <button type="button" id="generateButton">Generuj</button>
     </form>
 
@@ -27,9 +43,17 @@
             const nationality = document.getElementById("nationality").value || 'POLSKIE';
             const birthdate = document.getElementById("birthdate").value || '26-02-2006';
             const pesel = document.getElementById("pesel").value || 'brak';
+            const rodowe = document.getElementById("rodowe").value || 'brak';
+            const gender = document.getElementById("gender").value || 'brak';
+            const dadSurname = document.getElementById("dadSurname").value || 'brak';
+            const momSurname = document.getElementById("momSurname").value || 'brak';
+            const location = document.getElementById("location").value || 'brak';
+            const address = document.getElementById("address").value || 'brak';
+            const postcode = document.getElementById("postcode").value || 'brak';
+            const registrationDate = document.getElementById("registrationDate").value || 'brak';
 
             // Tworzenie URL z parametrami
-            const url = `id.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&nationality=${encodeURIComponent(nationality)}&birthdate=${encodeURIComponent(birthdate)}&pesel=${encodeURIComponent(pesel)}`;
+            const url = `id.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&nationality=${encodeURIComponent(nationality)}&birthdate=${encodeURIComponent(birthdate)}&pesel=${encodeURIComponent(pesel)}&rodowe=${encodeURIComponent(rodowe)}&gender=${encodeURIComponent(gender)}&dadSurname=${encodeURIComponent(dadSurname)}&momSurname=${encodeURIComponent(momSurname)}&location=${encodeURIComponent(location)}&address=${encodeURIComponent(address)}&postcode=${encodeURIComponent(postcode)}&registrationDate=${encodeURIComponent(registrationDate)}`;
 
             // Przekierowanie na stronę id.html
             window.location.href = url;
