@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator danych</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wprowadź dane</h1>
+    <form id="dataForm">
+        <div class="form-group">
+            <label for="nazwiskoRodowe">Nazwisko rodowe:</label>
+            <input type="text" id="nazwiskoRodowe" name="nazwiskoRodowe" required>
+        </div>
+        <div class="form-group">
+            <label for="plec">Płeć:</label>
+            <input type="text" id="plec" name="plec" required>
+        </div>
+        <div class="form-group">
+            <label for="nazwiskoRodoweOjca">Nazwisko rodowe ojca:</label>
+            <input type="text" id="nazwiskoRodoweOjca" name="nazwiskoRodoweOjca" required>
+        </div>
+        <div class="form-group">
+            <label for="nazwiskoRodoweMatki">Nazwisko rodowe matki:</label>
+            <input type="text" id="nazwiskoRodoweMatki" name="nazwiskoRodoweMatki" required>
+        </div>
+        <div class="form-group">
+            <label for="miejsceUrodzenia">Miejsce urodzenia:</label>
+            <input type="text" id="miejsceUrodzenia" name="miejsceUrodzenia" required>
+        </div>
+        <div class="form-group">
+            <label for="adres">Adres zameldowania na pobyt stały:</label>
+            <input type="text" id="adres" name="adres" required>
+        </div>
+        <div class="form-group">
+            <label for="kodPocztowy">Kod pocztowy:</label>
+            <input type="text" id="kodPocztowy" name="kodPocztowy" required>
+        </div>
+        <div class="form-group">
+            <label for="dataZameldowania">Data zameldowania na pobyt stały:</label>
+            <input type="date" id="dataZameldowania" name="dataZameldowania" required>
+        </div>
+        <button type="button" class="btn" onclick="saveData()">Zapisz dane</button>
+    </form>
+
+    <script>
+        function saveData() {
+            // Pobieranie wartości z formularza
+            const userData = {
+                nazwiskoRodowe: document.getElementById("nazwiskoRodowe").value,
+                plec: document.getElementById("plec").value,
+                nazwiskoRodoweOjca: document.getElementById("nazwiskoRodoweOjca").value,
+                nazwiskoRodoweMatki: document.getElementById("nazwiskoRodoweMatki").value,
+                miejsceUrodzenia: document.getElementById("miejsceUrodzenia").value,
+                adres: document.getElementById("adres").value,
+                kodPocztowy: document.getElementById("kodPocztowy").value,
+                dataZameldowania: document.getElementById("dataZameldowania").value,
+            };
+
+            // Zapisywanie danych w localStorage
+            localStorage.setItem("userData", JSON.stringify(userData));
+
+            // Przekierowanie na stronę id.html
+            window.location.href = "id.html";
+        }
+    </script>
+</body>
+</html>
