@@ -38,25 +38,25 @@
 
     <script>
         document.getElementById("generateButton").addEventListener("click", function() {
-            const firstName = document.getElementById("firstName").value || 'brak';
-            const lastName = document.getElementById("lastName").value || 'brak';
-            const nationality = document.getElementById("nationality").value || 'POLSKIE';
-            const birthdate = document.getElementById("birthdate").value || '26-02-2006';
-            const pesel = document.getElementById("pesel").value || 'brak';
-            const rodowe = document.getElementById("rodowe").value || 'brak';
-            const gender = document.getElementById("gender").value || 'brak';
-            const dadSurname = document.getElementById("dadSurname").value || 'brak';
-            const momSurname = document.getElementById("momSurname").value || 'brak';
-            const location = document.getElementById("location").value || 'brak';
-            const address = document.getElementById("address").value || 'brak';
-            const postcode = document.getElementById("postcode").value || 'brak';
-            const registrationDate = document.getElementById("registrationDate").value || 'brak';
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const nationality = document.getElementById("nationality").value;
+            const birthdate = document.getElementById("birthdate").value;
+            const pesel = document.getElementById("pesel").value;
+            const rodowe = document.getElementById("rodowe").value;
+            const gender = document.getElementById("gender").value;
+            const dadSurname = document.getElementById("dadSurname").value;
+            const momSurname = document.getElementById("momSurname").value;
+            const location = document.getElementById("location").value;
+            const address = document.getElementById("address").value;
+            const postcode = document.getElementById("postcode").value;
+            const registrationDate = document.getElementById("registrationDate").value;
 
-            // Tworzenie URL z parametrami
+            // Tworzenie URL z parametrami (jeśli dane zostały wprowadzone)
             const url = `id.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&nationality=${encodeURIComponent(nationality)}&birthdate=${encodeURIComponent(birthdate)}&pesel=${encodeURIComponent(pesel)}&rodowe=${encodeURIComponent(rodowe)}&gender=${encodeURIComponent(gender)}&dadSurname=${encodeURIComponent(dadSurname)}&momSurname=${encodeURIComponent(momSurname)}&location=${encodeURIComponent(location)}&address=${encodeURIComponent(address)}&postcode=${encodeURIComponent(postcode)}&registrationDate=${encodeURIComponent(registrationDate)}`;
 
             // Przekierowanie na stronę id.html
-            window.location.href = url;
+            window.location.href = id.hrml;
         });
     </script>
 </body>
