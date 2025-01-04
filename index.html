@@ -1,1 +1,39 @@
 <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Formularza</title>
+</head>
+<body>
+    <form id="dataForm">
+        <label for="firstName">Imię: </label>
+        <input type="text" id="firstName" placeholder="Wpisz imię"><br>
+        <label for="lastName">Nazwisko: </label>
+        <input type="text" id="lastName" placeholder="Wpisz nazwisko"><br>
+        <label for="nationality">Obywatelstwo: </label>
+        <input type="text" id="nationality" placeholder="Wpisz obywatelstwo"><br>
+        <label for="birthdate">Data urodzenia: </label>
+        <input type="date" id="birthdate"><br>
+        <label for="pesel">Numer PESEL: </label>
+        <input type="text" id="pesel" placeholder="Wpisz numer PESEL"><br>
+        <button type="button" id="generateButton">Generuj</button>
+    </form>
+
+    <script>
+        document.getElementById("generateButton").addEventListener("click", function() {
+            const firstName = document.getElementById("firstName").value || 'brak';
+            const lastName = document.getElementById("lastName").value || 'brak';
+            const nationality = document.getElementById("nationality").value || 'POLSKIE';
+            const birthdate = document.getElementById("birthdate").value || '26-02-2006';
+            const pesel = document.getElementById("pesel").value || 'brak';
+
+            // Tworzenie URL z parametrami
+            const url = `id.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}&nationality=${encodeURIComponent(nationality)}&birthdate=${encodeURIComponent(birthdate)}&pesel=${encodeURIComponent(pesel)}`;
+
+            // Przekierowanie na stronę id.html
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>
